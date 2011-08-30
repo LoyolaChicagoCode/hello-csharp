@@ -13,7 +13,7 @@ namespace HelloCSharp
 			// arrange
 			const int i = 1, j = 1;
 			// act
-			int r = i + j;
+			var r = i + j;
 			// assert
 			Assert.That(r, Is.EqualTo(2));
 		}
@@ -24,7 +24,7 @@ namespace HelloCSharp
 			// arrange
 			const int i = 1, j = 1;
 			// act
-			int r = i + j;
+			var r = i + j;
 			// assert
 			Assert.That(r, Is.EqualTo(3));
 		}
@@ -34,10 +34,10 @@ namespace HelloCSharp
 		{
 			// arrange
 			const int i = 1;
-			int j = 1;
+			var j = 1;
 			if (true) j = 0;
 			// act
-			int r = i / j;
+			var r = i / j;
 			// assert
 			Assert.That(r, Is.EqualTo(2));
 		}
@@ -47,10 +47,10 @@ namespace HelloCSharp
 		{
 			// arrange
 			const int i = 1;
-			int j = 1;
+			var j = 1;
 			if (true) j = 0;
 			// act
-			int r = i / j;
+			var r = i / j;
 			// assert
 			Assert.That(r, Is.EqualTo(2));
 		}
@@ -60,10 +60,10 @@ namespace HelloCSharp
 		{
 			// arrange
 			const int i = 1;
-			int j = 1;
+			var j = 1;
 			if (true) j = 0;
 			// act
-			int r = i / j;
+			var r = i / j;
 			// assert
 			Assert.That (r, Is.EqualTo (2));
 		}
