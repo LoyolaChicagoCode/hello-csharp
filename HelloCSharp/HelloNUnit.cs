@@ -8,44 +8,64 @@ namespace HelloCSharp
 	public class HelloNUnit
 	{
 		[Test]
-		public void TestPass () // assertion holds
+		public void TestPass() // assertion holds
 		{
-			const int i = 1 + 1;
-			Assert.That (i, Is.EqualTo(2));
+			// arrange
+			const int i = 1, j = 1;
+			// act
+			int r = i + j;
+			// assert
+			Assert.That(r, Is.EqualTo(2));
 		}
 
 		[Test]
-		public void TestFail () // assertion fails
+		public void TestFail() // assertion fails
 		{
-			const int i = 1 + 1;
-			Assert.That (i, Is.EqualTo(3));
+			// arrange
+			const int i = 1, j = 1;
+			// act
+			int r = i + j;
+			// assert
+			Assert.That(r, Is.EqualTo(3));
 		}
 	
 		[Test]
-		public void TestError () // error occurs before testing assertion
+		public void TestError() // error occurs before testing assertion
 		{
+			// arrange
 			const int i = 1;
 			int j = 1;
 			if (true) j = 0;
-			Assert.That (i / j, Is.EqualTo (2));
+			// act
+			int r = i / j;
+			// assert
+			Assert.That(r, Is.EqualTo(2));
 		}
 
 		[Test, Ignore]
-		public void TestIgnore () // test is not run
+		public void TestIgnore() // test is not run
 		{
+			// arrange
 			const int i = 1;
 			int j = 1;
 			if (true) j = 0;
-			Assert.AreEqual (3, i / j);
+			// act
+			int r = i / j;
+			// assert
+			Assert.That(r, Is.EqualTo(2));
 		}
 
 		[Test, ExpectedException("System.DivideByZeroException")]
 		public void TestErrorExpected () // test fails if error does not occur
 		{
+			// arrange
 			const int i = 1;
 			int j = 1;
 			if (true) j = 0;
-			Assert.AreEqual (3, i / j);
+			// act
+			int r = i / j;
+			// assert
+			Assert.That (r, Is.EqualTo (2));
 		}
 	}
 }
